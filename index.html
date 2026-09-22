@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameZone</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🎮 GameZone</h1>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="curriculo.html">Currículo</a>
+            <a href="identidade.html">Identidade</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+        <button id="botaoTema">🌙 Modo escuro</button>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h2>Bem-vindo à GameZone!</h2>
+
+            <p>
+                Um espaço para conhecer jogos, explorar novidades
+                e se divertir.
+            </p>
+        </section>
+
+
+        <section id="jogos" class="jogos">
+
+            <h2>🎮 Jogos</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="imagem">🏎️</div>
+
+                    <h3>Speed Racing</h3>
+
+                    <p>
+                        Corra e seja o mais rápido!
+                    </p>
+
+                    <button>Ver detalhes</button>
+                </div>
+
+
+                <div class="card">
+                    <div class="imagem">🚀</div>
+
+                    <h3>Space War</h3>
+
+                    <p>
+                        Explore o espaço e enfrente inimigos.
+                    </p>
+
+                    <button>Ver detalhes</button>
+                </div>
+
+
+                <div class="card">
+                    <div class="imagem">⚔️</div>
+
+                    <h3>Battle Arena</h3>
+
+                    <p>
+                        Entre na batalha e mostre suas habilidades.
+                    </p>
+
+                    <button>Ver detalhes</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="sobre" class="sobre">
+
+            <h2>Sobre a GameZone</h2>
+
+            <p>
+                A GameZone é um site criado para reunir
+                informações sobre jogos e oferecer uma
+                experiência divertida para os jogadores.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>© 2026 GameZone - Todos os direitos reservados.</p>
+
+        <p>Contato: contato@gamezone.com</p>
+
+    </footer>
+
+    <script src="theme.js"></script>
+
+</body>
+</html>
+
+        const botaoTema = document.getElementById("botaoTema");
+
+        botaoTema.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+
+                botaoTema.textContent = "☀️ Modo claro";
+
+            } else {
+
+                botaoTema.textContent = "🌙 Modo escuro";
+
+            }
+
+        });
+
+   
+    <script src="theme.js"></script>
+
+</body>
+
+</html>
+    
