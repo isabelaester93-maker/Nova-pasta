@@ -9,3 +9,160 @@
     
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone - Identidade do Jogador</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            font-family: sans-serif;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .avatar-box {
+            width: 120px;
+            height: 120px;
+            background: #222;
+            border: 4px solid #00ff88;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+        .profile-name {
+            color: #00ff88;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .profile-email {
+            color: #aaa;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .stats-box {
+            background: #252525;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .stats-title {
+            color: #00bfff;
+            margin-top: 0;
+            border-bottom: 1px solid #444;
+            padding-bottom: 8px;
+        }
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        .logout-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .logout-btn:hover {
+            background: #ff6b81;
+            box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+        }
+        .nav-links {
+            margin-top: 20px;
+        }
+        .nav-links a {
+            color: #00bfff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <!-- Ícone representativo do Jogador -->
+        <div class="avatar-box">🎮</div>
+        
+        <h1 class="profile-name" id="userName">Jogador_Conectado</h1>
+        <p class="profile-email" id="userEmail">carregando...</p>
+
+        <!-- Histórico de conquistas/pontuação -->
+        <div class="stats-box">
+            <h3 class="stats-title">🏆 Minhas Maiores Pontuações</h3>
+            <div class="stat-item">
+                <span>🏎️ Speed Racing:</span>
+                <span id="scoreRacing" style="color: #00ff88;">0 pts</span>
+            </div>
+            <div class="stat-item">
+                <span>🚀 Space War:</span>
+                <span id="scoreSpace" style="color: #00ff88;">0 pts</span>
+            </div>
+            <div class="stat-item">
+                <span>⚔️ Battle Arena:</span>
+                <span id="scoreArena" style="color: #00ff88;">0 pts</span>
+            </div>
+        </div>
+
+        <button class="logout-btn" id="btnSair">Desconectar da Conta</button>
+
+        <div class="nav-links">
+            <a href="index.html">← Voltar ao Lobby</a>
+        </div>
+    </div>
+
+    <!-- Bibliotecas e Lógica de Conexão -->
+    <script src="https://jsdelivr.net"></script>
+    <script src="subpase.js"></script>
+    <script>
+        // Função simples para carregar os dados assim que a página abrir
+        async function carregarPerfil() {
+            // Verifica se tem algum usuário logado no Supabase
+            const { data: { user } } = await supabase.auth.getUser();
+
+            if (user) {
+                // Atualiza o e-mail na tela com o e-mail real do banco
+                document.getElementById('userEmail').innerText = user.email;
+                // Usa a primeira parte do e-mail como nome provisório
+                document.getElementById('userName').innerText = user.email.split('@')[0];
+            } else {
+                // Se não estiver logado, avisa e manda para a página de login
+                document.getElementById('userEmail').innerText = "Nenhum usuário logado";
+                alert("Por favor, faça login para ver sua identidade de jogador.");
+                window.location.href = "login.html";
+            }
+        }
+
+        // Lógica do botão de deslogar
+        document.getElementById('btnSair').addEventListener('click', async () => {
+            await supabase.auth.signOut();
+            alert("Você saiu da conta.");
+            window.location.href = "login.html";
+        });
+
+        // Executa a verificação ao abrir a página
+        carregarPerfil();
+    </script>
+</body>
+</html>
