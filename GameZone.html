@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameZone</title>
+
+    <link rel="stylesheet" href="./GameZone_files/style.css">
+</head>
+
+<body class="dark">
+
+    <header>
+        <h1>🎮 GameZone</h1>
+
+        <nav>
+            <a href="http://127.0.0.1:5500/index.html">Início</a>
+            <a href="http://127.0.0.1:5500/curriculo.html">Currículo</a>
+            <a href="http://127.0.0.1:5500/identidade.html">Identidade</a>
+            <a href="http://127.0.0.1:5500/login.html">Login</a>
+        </nav>
+
+        <button id="botaoTema">☀️ Modo claro</button>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h2>Bem-vindo à GameZone!</h2>
+
+            <p>
+                Um espaço para conhecer jogos, explorar novidades
+                e se divertir.
+            </p>
+        </section>
+
+
+        <section id="jogos" class="jogos">
+
+            <h2>🎮 Jogos</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="imagem">🏎️</div>
+
+                    <h3>Speed Racing</h3>
+
+                    <p>
+                        Corra e seja o mais rápido!
+                    </p>
+
+                    <button>Ver detalhes</button>
+                </div>
+
+
+                <div class="card">
+                    <div class="imagem">🚀</div>
+
+                    <h3>Space War</h3>
+
+                    <p>
+                        Explore o espaço e enfrente inimigos.
+                    </p>
+
+                    <button>Ver detalhes</button>
+                </div>
+
+
+                <div class="card">
+                    <div class="imagem">⚔️</div>
+
+                    <h3>Battle Arena</h3>
+
+                    <p>
+                        Entre na batalha e mostre suas habilidades.
+                    </p>
+
+                    <button>Ver detalhes</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="sobre" class="sobre">
+
+            <h2>Sobre a GameZone</h2>
+
+            <p>
+                A GameZone é um site criado para reunir
+                informações sobre jogos e oferecer uma
+                experiência divertida para os jogadores.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>© 2026 GameZone - Todos os direitos reservados.</p>
+
+        <p>Contato: contato@gamezone.com</p>
+
+    </footer>
+
+    <script src="./GameZone_files/theme.js.baixados"></script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+        const botaoTema = document.getElementById("botaoTema");
+
+        botaoTema.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+
+                botaoTema.textContent = "☀️ Modo claro";
+
+            } else {
+
+                botaoTema.textContent = "🌙 Modo escuro";
+
+            }
+
+        });
+
+   
+    <script src="./GameZone_files/theme.js.baixados"></script>
+
+<!-- Code injected by li--></body></html>
